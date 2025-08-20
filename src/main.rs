@@ -17,7 +17,8 @@ async fn main() -> tide::Result<()> {
     app.at("/data:id").put(update_data);
     app.at("/data:id").delete(delete_data);
 
-    let addr = "127.0.0.1:8080";
+    //  let addr = "127.0.0.1:8080";
+    let addr = "0.0.0.0:8080";
     println!("Servidor Tide rodando em http://{addr}");
 
     app.listen(addr).await?;
