@@ -13,9 +13,9 @@ async fn main() -> tide::Result<()> {
     let mut app = tide::with_state(state);
     app.at("/data").post(create_data);
     app.at("/data").get(read_all_data);
-    app.at("/data:id").get(read_data);
-    app.at("/data:id").put(update_data);
-    app.at("/data:id").delete(delete_data);
+    app.at("/data/:id").get(read_data);
+    app.at("/data/:id").put(update_data);
+    app.at("/data/:id").delete(delete_data);
 
     //  let addr = "127.0.0.1:8080";
     let addr = "0.0.0.0:8080";
